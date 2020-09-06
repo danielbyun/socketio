@@ -9,6 +9,10 @@ admin.on("welcome", (dataFromServer) => {
   console.log(dataFromServer);
 });
 
+socket.on("joined", (msg) => {
+  console.log(msg);
+});
+
 document.querySelector("#message-form").addEventListener("submit", (event) => {
   event.preventDefault();
 

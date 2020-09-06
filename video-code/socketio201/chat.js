@@ -13,6 +13,14 @@ io.of("/").on("connection", (socket) => {
   socket.on("messageToServer", (dataFromClient) => {
     console.log(dataFromClient);
   });
+
+  socket.join("level1");
+  // socket
+  //   .to("level1")
+  //   .emit("joined", `${socket.id} says: I have joined the level 1 room`);
+  io.of("/")
+    .to("level1")
+    .emit("joined", `${socket.id} says: I have joined the level 1 room`);
 });
 
 io.of("/admin").on("connection", (socket) => {
